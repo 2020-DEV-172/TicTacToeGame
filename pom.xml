@@ -16,6 +16,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <jacoco.version>0.8.5</jacoco.version>
         <pitest.version>1.5.2</pitest.version>
+        <exec.maven.version>1.2.1</exec.maven.version>
     </properties>
 
     <dependencies>
@@ -68,6 +69,22 @@
                     <targetTests>
                         <param>com.bnpp.kata.*</param>
                     </targetTests>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.maven.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.bnpp.kata.GameStarter</mainClass>
                 </configuration>
             </plugin>
         </plugins>
