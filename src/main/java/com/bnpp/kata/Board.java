@@ -37,7 +37,7 @@ public class Board {
     }
 
     public boolean checkIfAnyRowIsMarkedBySamePlayer() {
-        for (int row = INDEX_1; row < 10; row += INDEX_3) {
+        for (int row = INDEX_1; row < INDEX_10; row += INDEX_3) {
             if (getPlayerAt(new Position(row)) != Player.EMPTY.getValue() &&
                     getPlayerAt(new Position(row)) == getPlayerAt(new Position(row + INDEX_1)) &&
                     getPlayerAt(new Position(row + INDEX_1)) == getPlayerAt(new Position(row + INDEX_2))) {
