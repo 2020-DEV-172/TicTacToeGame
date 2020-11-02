@@ -31,4 +31,8 @@ public class Board {
     public char getNextPlayer() {
         return getCurrentPlayer() == Player.X.getValue() ? Player.O.getValue() : Player.X.getValue();
     }
+
+    public boolean checkIfPositionIsAlreadyOccupied(Position position) {
+        return getPlayerAt(position) != '\0';
+    }
 }

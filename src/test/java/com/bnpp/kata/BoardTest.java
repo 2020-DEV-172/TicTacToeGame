@@ -30,4 +30,14 @@ public class BoardTest {
         assertThat(board.getCurrentPlayer(), is(Player.X.getValue()));
         assertThat(board.getNextPlayer(), is(Player.O.getValue()));
     }
+
+    @Test
+    public void returnTrueIfPositionIsAlreadyOccupied() {
+        Board board = new Board();
+        Position position = new Position(INDEX_1);
+
+        board.markPlayerAt(position);
+
+        assertThat(board.checkIfPositionIsAlreadyOccupied(position), is(true));
+    }
 }
