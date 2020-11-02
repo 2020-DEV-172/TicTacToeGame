@@ -22,6 +22,8 @@ public class TicTacToe {
             output = getCurrentPlayer() + GAME_WON;
         } else if (checkIfAllPositionsAreOccupied()) {
             output = GAME_DRAW;
+        } else {
+            output = "Game continues.";
         }
         return output;
     }
