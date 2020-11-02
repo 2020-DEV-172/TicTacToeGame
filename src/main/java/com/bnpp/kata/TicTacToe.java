@@ -15,12 +15,16 @@ public class TicTacToe {
     }
 
     public void playGame(Position position) throws PositionInvalidException, PositionNotEmptyException {
+        validatePosition(position);
+        board.markPlayerAt(position);
+    }
+
+    private void validatePosition(Position position) throws PositionInvalidException, PositionNotEmptyException {
         if (position.getInputPosition() < INDEX_1 || position.getInputPosition() > INDEX_9) {
             throw new PositionInvalidException(POSITION_INVALID_MSG);
         } else if (board.checkIfPositionIsAlreadyOccupied(position)) {
             throw new PositionNotEmptyException(POSITION_NOT_EMPTY_MSG);
         }
-        board.markPlayerAt(position);
     }
 
     public char getPlayerAt(Position position) {
