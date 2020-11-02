@@ -20,6 +20,13 @@ public class GameStarter {
         ticTacToe = new TicTacToe();
     }
 
+    public static void main(String[] args) {
+        GameStarter gameStarter = new GameStarter();
+        logger.info(GAME_STARTS);
+        String result = gameStarter.startGame();
+        logger.info(result);
+    }
+
     public Integer validateInput(String input) throws InvalidInputException {
         try {
             return Integer.parseInt(input);
