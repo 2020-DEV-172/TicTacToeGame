@@ -1,10 +1,11 @@
 package com.bnpp.kata;
 
+import static com.bnpp.kata.constant.Constant.*;
+
 public class TicTacToe {
 
     private char[][] boardGrid;
-    public static final Integer INDEX_3 = 3;
-    private Integer gameCounter = 0;
+    private Integer gameCounter = INDEX_0;
 
     public TicTacToe() {
         this.boardGrid = new char[INDEX_3][INDEX_3];
@@ -20,7 +21,7 @@ public class TicTacToe {
     }
 
     public char getCurrentPlayer() {
-        return gameCounter % 2 == 0 ? 'O' : 'X';
+        return gameCounter % INDEX_2 == INDEX_0 ? 'O' : 'X';
     }
 
     public char getNextPlayer() {
