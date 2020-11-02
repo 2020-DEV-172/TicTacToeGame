@@ -47,21 +47,14 @@ public class Board {
         return false;
     }
 
-    public boolean checkIfFirstColumnIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_1)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_1)) == getPlayerAt(new Position(INDEX_4)) &&
-                getPlayerAt(new Position(INDEX_4)) == getPlayerAt(new Position(INDEX_7));
-    }
-
-    public boolean checkIfSecondColumnIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_2)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_2)) == getPlayerAt(new Position(INDEX_5)) &&
-                getPlayerAt(new Position(INDEX_5)) == getPlayerAt(new Position(INDEX_8));
-    }
-
-    public boolean checkIfThirdColumnIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_3)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_3)) == getPlayerAt(new Position(INDEX_6)) &&
-                getPlayerAt(new Position(INDEX_6)) == getPlayerAt(new Position(INDEX_9));
+    public boolean checkIfAnyColumnIsMarkedBySamePlayer() {
+        for (int column = INDEX_1; column < INDEX_4; column++) {
+            if (getPlayerAt(new Position(column)) != Player.EMPTY.getValue() &&
+                    getPlayerAt(new Position(column)) == getPlayerAt(new Position(column + INDEX_3)) &&
+                    getPlayerAt(new Position(column + INDEX_3)) == getPlayerAt(new Position(column + INDEX_6))) {
+                return true;
+            }
+        }
+        return false;
     }
 }
