@@ -17,13 +17,13 @@ public class TicTacToe {
     public String playGame(Position position) throws PositionInvalidException, PositionNotEmptyException {
         validatePosition(position);
         board.markPlayerAt(position);
-        String output = EMPTY;
+        String output;
         if (checkWinner()) {
             output = getCurrentPlayer() + GAME_WON;
         } else if (checkIfAllPositionsAreOccupied()) {
             output = GAME_DRAW;
         } else {
-            output = "Game continues.";
+            output = GAME_CONTINUES;
         }
         return output;
     }

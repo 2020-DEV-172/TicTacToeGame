@@ -16,8 +16,8 @@ public class Constant {
     public static final String POSITION_NOT_EMPTY_MSG = "Selected position is already filled, please select any other position.";
     public static final Integer INDEX_10 = 10;
     public static final String GAME_WON = " has won the game.";
-    public static final String EMPTY = "";
     public static final String GAME_DRAW = "Game is draw, as all the positions have been filled without a winner.";
+    public static final String GAME_CONTINUES = "Game continues.";
 
     private Constant() {
     }
