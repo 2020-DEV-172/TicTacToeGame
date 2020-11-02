@@ -60,7 +60,7 @@ public class BoardTest {
         board.markPlayerAt(position8);
         board.markPlayerAt(position3);
 
-        assertThat(board.checkIfFirstRowIsMarkedBySamePlayer(), is(true));
+        assertThat(board.checkIfAnyRowIsMarkedBySamePlayer(), is(true));
     }
 
     @Test
@@ -77,7 +77,7 @@ public class BoardTest {
         board.markPlayerAt(position8);
         board.markPlayerAt(position6);
 
-        assertThat(board.checkIfSecondRowIsMarkedBySamePlayer(), is(true));
+        assertThat(board.checkIfAnyRowIsMarkedBySamePlayer(), is(true));
     }
 
     @Test
@@ -94,6 +94,6 @@ public class BoardTest {
         board.markPlayerAt(position2);
         board.markPlayerAt(position9);
 
-        assertThat(board.checkIfThirdRowIsMarkedBySamePlayer(), is(true));
+        assertThat(board.checkIfAnyRowIsMarkedBySamePlayer(), is(true));
     }
 }

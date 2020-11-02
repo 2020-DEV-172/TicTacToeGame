@@ -36,21 +36,14 @@ public class Board {
         return getPlayerAt(position) != Player.EMPTY.getValue();
     }
 
-    public boolean checkIfFirstRowIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_1)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_1)) == getPlayerAt(new Position(INDEX_2)) &&
-                getPlayerAt(new Position(INDEX_2)) == getPlayerAt(new Position(INDEX_3));
-    }
-
-    public boolean checkIfSecondRowIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_4)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_4)) == getPlayerAt(new Position(INDEX_5)) &&
-                getPlayerAt(new Position(INDEX_5)) == getPlayerAt(new Position(INDEX_6));
-    }
-
-    public boolean checkIfThirdRowIsMarkedBySamePlayer() {
-        return getPlayerAt(new Position(INDEX_7)) != Player.EMPTY.getValue() &&
-                getPlayerAt(new Position(INDEX_7)) == getPlayerAt(new Position(INDEX_8)) &&
-                getPlayerAt(new Position(INDEX_8)) == getPlayerAt(new Position(INDEX_9));
+    public boolean checkIfAnyRowIsMarkedBySamePlayer() {
+        for (int row = INDEX_1; row < 10; row += INDEX_3) {
+            if (getPlayerAt(new Position(row)) != Player.EMPTY.getValue() &&
+                    getPlayerAt(new Position(row)) == getPlayerAt(new Position(row + INDEX_1)) &&
+                    getPlayerAt(new Position(row + INDEX_1)) == getPlayerAt(new Position(row + INDEX_2))) {
+                return true;
+            }
+        }
+        return false;
     }
 }
