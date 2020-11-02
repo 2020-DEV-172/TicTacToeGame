@@ -35,4 +35,10 @@ public class Board {
     public boolean checkIfPositionIsAlreadyOccupied(Position position) {
         return getPlayerAt(position) != Player.EMPTY.getValue();
     }
+
+    public boolean checkIfFirstRowIsMarkedBySamePlayer() {
+        return getPlayerAt(new Position(INDEX_1)) != Player.EMPTY.getValue() &&
+                getPlayerAt(new Position(INDEX_1)) == getPlayerAt(new Position(INDEX_2)) &&
+                getPlayerAt(new Position(INDEX_2)) == getPlayerAt(new Position(INDEX_3));
+    }
 }

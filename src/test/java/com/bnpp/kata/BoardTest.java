@@ -45,4 +45,21 @@ public class BoardTest {
 
         assertThat(board.checkIfPositionIsAlreadyOccupied(position), is(true));
     }
+
+    @Test
+    public void checkIfFirstRowIsMarkedBySamePlayer() {
+        Position position1 = new Position(INDEX_1);
+        Position position6 = new Position(INDEX_6);
+        Position position2 = new Position(INDEX_2);
+        Position position8 = new Position(INDEX_8);
+        Position position3 = new Position(INDEX_3);
+
+        board.markPlayerAt(position1);
+        board.markPlayerAt(position6);
+        board.markPlayerAt(position2);
+        board.markPlayerAt(position8);
+        board.markPlayerAt(position3);
+
+        assertThat(board.checkIfFirstRowIsMarkedBySamePlayer(), is(true));
+    }
 }
