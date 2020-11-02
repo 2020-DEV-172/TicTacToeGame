@@ -18,7 +18,8 @@ public class TicTacToe {
         validatePosition(position);
         board.markPlayerAt(position);
         String output = "";
-        if (board.checkIfAnyRowIsMarkedBySamePlayer()) {
+        if (board.checkIfAnyRowIsMarkedBySamePlayer() ||
+                board.checkIfAnyColumnIsMarkedBySamePlayer()) {
             output = getCurrentPlayer() + " has won the game.";
         }
         return output;
