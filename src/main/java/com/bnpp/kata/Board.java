@@ -52,4 +52,10 @@ public class Board {
                 getPlayerAt(new Position(INDEX_1)) == getPlayerAt(new Position(INDEX_4)) &&
                 getPlayerAt(new Position(INDEX_4)) == getPlayerAt(new Position(INDEX_7));
     }
+
+    public boolean checkIfSecondColumnIsMarkedBySamePlayer() {
+        return getPlayerAt(new Position(INDEX_2)) != Player.EMPTY.getValue() &&
+                getPlayerAt(new Position(INDEX_2)) == getPlayerAt(new Position(INDEX_5)) &&
+                getPlayerAt(new Position(INDEX_5)) == getPlayerAt(new Position(INDEX_8));
+    }
 }
