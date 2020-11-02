@@ -3,21 +3,23 @@ package com.bnpp.kata.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.bnpp.kata.constant.Constant.*;
+
 public class Position {
 
     private Integer inputPosition;
-    private static Map<Integer, Integer[]> indexMap = new HashMap<>();
+    private static final Map<Integer, Integer[]> indexMap = new HashMap<>();
 
     static {
-        indexMap.put(1, new Integer[]{0, 0});
-        indexMap.put(2, new Integer[]{0, 1});
-        indexMap.put(3, new Integer[]{0, 2});
-        indexMap.put(4, new Integer[]{1, 0});
-        indexMap.put(5, new Integer[]{1, 1});
-        indexMap.put(6, new Integer[]{1, 2});
-        indexMap.put(7, new Integer[]{2, 0});
-        indexMap.put(8, new Integer[]{2, 1});
-        indexMap.put(9, new Integer[]{2, 2});
+        indexMap.put(INDEX_1, new Integer[]{INDEX_0, INDEX_0});
+        indexMap.put(INDEX_2, new Integer[]{INDEX_0, INDEX_1});
+        indexMap.put(INDEX_3, new Integer[]{INDEX_0, INDEX_2});
+        indexMap.put(INDEX_4, new Integer[]{INDEX_1, INDEX_0});
+        indexMap.put(INDEX_5, new Integer[]{INDEX_1, INDEX_1});
+        indexMap.put(INDEX_6, new Integer[]{INDEX_1, INDEX_2});
+        indexMap.put(INDEX_7, new Integer[]{INDEX_2, INDEX_0});
+        indexMap.put(INDEX_8, new Integer[]{INDEX_2, INDEX_1});
+        indexMap.put(INDEX_9, new Integer[]{INDEX_2, INDEX_2});
     }
 
     public Position(Integer inputPosition) {
