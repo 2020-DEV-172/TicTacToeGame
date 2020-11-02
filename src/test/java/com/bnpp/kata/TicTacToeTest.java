@@ -85,4 +85,20 @@ public class TicTacToeTest {
 
         assertThat(ticTacToe.playGame(position8), is(ticTacToe.getCurrentPlayer() + " has won the game."));
     }
+
+    @Test
+    public void declareWinnerIfAnyDiagonalIsMarkedBySamePlayer() throws PositionNotEmptyException, PositionInvalidException {
+        Position position2 = new Position(INDEX_2);
+        Position position4 = new Position(INDEX_4);
+        Position position5 = new Position(INDEX_5);
+        Position position7 = new Position(INDEX_7);
+        Position position3 = new Position(INDEX_3);
+
+        ticTacToe.playGame(position3);
+        ticTacToe.playGame(position4);
+        ticTacToe.playGame(position5);
+        ticTacToe.playGame(position2);
+
+        assertThat(ticTacToe.playGame(position7), is(ticTacToe.getCurrentPlayer() + " has won the game."));
+    }
 }
