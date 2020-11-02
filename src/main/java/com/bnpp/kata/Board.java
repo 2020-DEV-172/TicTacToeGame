@@ -1,6 +1,7 @@
 package com.bnpp.kata;
 
 import com.bnpp.kata.model.Player;
+import com.bnpp.kata.model.Position;
 
 import static com.bnpp.kata.constant.Constant.*;
 import static com.bnpp.kata.constant.Constant.INDEX_0;
@@ -14,13 +15,13 @@ public class Board {
         this.boardGrid = new char[INDEX_3][INDEX_3];
     }
 
-    public void markPlayerAt(int rowIndex, int colIndex) {
+    public void markPlayerAt(Position position) {
         gameCounter++;
-        boardGrid[rowIndex][colIndex] = getCurrentPlayer();
+        boardGrid[position.getRowIndex()][position.getColIndex()] = getCurrentPlayer();
     }
 
-    public char getPlayerAt(int rowIndex, int colIndex) {
-        return boardGrid[rowIndex][colIndex];
+    public char getPlayerAt(Position position) {
+        return boardGrid[position.getRowIndex()][position.getColIndex()];
     }
 
     public char getCurrentPlayer() {

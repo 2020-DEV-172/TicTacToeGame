@@ -1,5 +1,7 @@
 package com.bnpp.kata;
 
+import com.bnpp.kata.model.Position;
+
 public class TicTacToe {
 
     private Board board;
@@ -8,12 +10,12 @@ public class TicTacToe {
         this.board = new Board();
     }
 
-    public void playGame(int rowIndex, int colIndex) {
-        board.markPlayerAt(rowIndex, colIndex);
+    public void playGame(Position position) {
+        board.markPlayerAt(position);
     }
 
-    public char getPlayerAt(int rowIndex, int colIndex) {
-        return board.getPlayerAt(rowIndex, colIndex);
+    public char getPlayerAt(Position position) {
+        return board.getPlayerAt(position);
     }
 
     public char getCurrentPlayer() {

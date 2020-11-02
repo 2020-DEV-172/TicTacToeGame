@@ -1,6 +1,7 @@
 package com.bnpp.kata;
 
 import com.bnpp.kata.model.Player;
+import com.bnpp.kata.model.Position;
 import org.junit.Test;
 
 import static com.bnpp.kata.constant.Constant.*;
@@ -12,17 +13,19 @@ public class BoardTest {
     @Test
     public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() {
         Board board = new Board();
+        Position position = new Position(INDEX_0, INDEX_0);
 
-        board.markPlayerAt(INDEX_0, INDEX_0);
+        board.markPlayerAt(position);
 
-        assertThat(board.getPlayerAt(INDEX_0, INDEX_0), is(Player.X.getValue()));
+        assertThat(board.getPlayerAt(position), is(Player.X.getValue()));
     }
 
     @Test
     public void playerShouldChangeAlternatively() {
         Board board = new Board();
+        Position position = new Position(INDEX_0, INDEX_0);
 
-        board.markPlayerAt(INDEX_0, INDEX_0);
+        board.markPlayerAt(position);
 
         assertThat(board.getCurrentPlayer(), is(Player.X.getValue()));
         assertThat(board.getNextPlayer(), is(Player.O.getValue()));
