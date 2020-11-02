@@ -65,6 +65,6 @@ public class Board {
     }
 
     public boolean checkIfAllPositionsAreOccupied() {
-        return gameCounter == 9;
+        return gameCounter.equals(INDEX_9);
     }
 }
