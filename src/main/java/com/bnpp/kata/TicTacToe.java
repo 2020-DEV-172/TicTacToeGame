@@ -28,7 +28,7 @@ public class TicTacToe {
         return output;
     }
 
-    private boolean checkIfAllPositionsAreOccupied() {
+    public boolean checkIfAllPositionsAreOccupied() {
         return board.checkIfAllPositionsAreOccupied();
     }
 
