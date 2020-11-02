@@ -33,4 +33,8 @@ public class Position {
     public Integer getColIndex() {
         return indexMap.get(inputPosition)[1];
     }
+
+    public Integer getInputPosition() {
+        return inputPosition;
+    }
 }

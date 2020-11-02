@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class TicTacToeTest {
 
     @Test
-    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() {
+    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() throws Exception {
         TicTacToe ticTacToe = new TicTacToe();
         Position position = new Position(1);
 
@@ -21,7 +21,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void playerShouldChangeAlternatively() {
+    public void playerShouldChangeAlternatively() throws Exception {
         TicTacToe ticTacToe = new TicTacToe();
         Position position = new Position(1);
 
@@ -29,5 +29,13 @@ public class TicTacToeTest {
 
         assertThat(ticTacToe.getCurrentPlayer(), is(Player.X.getValue()));
         assertThat(ticTacToe.getNextPlayer(), is(Player.O.getValue()));
+    }
+
+    @Test(expected = Exception.class)
+    public void throwExceptionWhenPlayerTriesToMarkInOutOfRangePosition() throws Exception {
+        TicTacToe ticTacToe = new TicTacToe();
+        Position position = new Position(INDEX_0);
+
+        ticTacToe.playGame(position);
     }
 }
