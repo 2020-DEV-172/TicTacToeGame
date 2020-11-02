@@ -4,6 +4,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({BoardTest.class, TicTacToeTest.class})
+@Suite.SuiteClasses({BoardTest.class, TicTacToeTest.class, PositionTest.class})
 public class GameSuite {
 }
