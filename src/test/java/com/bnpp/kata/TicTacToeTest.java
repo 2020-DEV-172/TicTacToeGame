@@ -13,7 +13,7 @@ public class TicTacToeTest {
     @Test
     public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() {
         TicTacToe ticTacToe = new TicTacToe();
-        Position position = new Position(INDEX_0, INDEX_0);
+        Position position = new Position(1);
 
         ticTacToe.playGame(position);
 
@@ -23,7 +23,7 @@ public class TicTacToeTest {
     @Test
     public void playerShouldChangeAlternatively() {
         TicTacToe ticTacToe = new TicTacToe();
-        Position position = new Position(INDEX_0, INDEX_0);
+        Position position = new Position(1);
 
         ticTacToe.playGame(position);
 

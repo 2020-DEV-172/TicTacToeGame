@@ -13,7 +13,7 @@ public class BoardTest {
     @Test
     public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() {
         Board board = new Board();
-        Position position = new Position(INDEX_0, INDEX_0);
+        Position position = new Position(1);
 
         board.markPlayerAt(position);
 
@@ -23,7 +23,7 @@ public class BoardTest {
     @Test
     public void playerShouldChangeAlternatively() {
         Board board = new Board();
-        Position position = new Position(INDEX_0, INDEX_0);
+        Position position = new Position(1);
 
         board.markPlayerAt(position);
 
