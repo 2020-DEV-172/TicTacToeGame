@@ -19,6 +19,7 @@ public class Constant {
     public static final String GAME_DRAW = "Game is draw, as all the positions have been filled without a winner.";
     public static final String GAME_CONTINUES = "Game continues.";
     public static final String INVALID_INPUT_MSG = "Entered Position is invalid. Please enter a digit from 1 to 9";
+    public static final String GAME_STARTS = "Game Starts";
 
     private Constant() {
     }

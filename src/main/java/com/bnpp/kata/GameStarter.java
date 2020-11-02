@@ -14,6 +14,11 @@ import static com.bnpp.kata.constant.Constant.*;
 public class GameStarter {
 
     private static final Logger logger = Logger.getLogger(GameStarter.class.getName());
+    private TicTacToe ticTacToe;
+
+    public GameStarter() {
+        ticTacToe = new TicTacToe();
+    }
 
     public Integer validateInput(String input) throws InvalidInputException {
         try {
@@ -24,9 +29,8 @@ public class GameStarter {
     }
 
     public String startGame() {
-        TicTacToe ticTacToe = new TicTacToe();
         Scanner scanner = new Scanner(System.in);
-        String output = "Game Starts";
+        String output = GAME_STARTS;
         while (!ticTacToe.checkIfAllPositionsAreOccupied()) {
             try {
                 Integer inputPos = validateInput(scanner.nextLine());
