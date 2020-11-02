@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.bnpp.kata.constant.Constant.*;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -205,5 +206,18 @@ public class BoardTest {
         board.markPlayerAt(position4);
 
         assertThat(board.checkIfAllPositionsAreOccupied(), is(true));
+    }
+
+    @Test
+    public void assembleTheBoardForPrinting() {
+        Position position1 = new Position(INDEX_1);
+        Position position5 = new Position(INDEX_5);
+        Position position9 = new Position(INDEX_9);
+
+        board.markPlayerAt(position1);
+        board.markPlayerAt(position5);
+        board.markPlayerAt(position9);
+
+        assertThat(board.assembleBoard(), containsString("|X| | |"));
     }
 }

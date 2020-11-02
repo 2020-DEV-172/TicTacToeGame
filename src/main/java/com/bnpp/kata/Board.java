@@ -67,4 +67,20 @@ public class Board {
     public boolean checkIfAllPositionsAreOccupied() {
         return gameCounter.equals(INDEX_9);
     }
+
+    public String assembleBoard() {
+        StringBuilder builder = new StringBuilder(NEW_LINE);
+        for (char[] rows : boardGrid) {
+            builder.append("|");
+            for (char column : rows) {
+                if (column == Player.EMPTY.getValue()) {
+                    builder.append(" ").append("|");
+                } else {
+                    builder.append(column).append("|");
+                }
+            }
+            builder.append(NEW_LINE).append("-------").append(NEW_LINE);
+        }
+        return builder.toString();
+    }
 }

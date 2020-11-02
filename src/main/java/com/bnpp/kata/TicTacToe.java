@@ -4,11 +4,14 @@ import com.bnpp.kata.exception.PositionInvalidException;
 import com.bnpp.kata.exception.PositionNotEmptyException;
 import com.bnpp.kata.model.Position;
 
+import java.util.logging.Logger;
+
 import static com.bnpp.kata.constant.Constant.*;
 
 public class TicTacToe {
 
     private Board board;
+    private static final Logger logger = Logger.getLogger(TicTacToe.class.getName());
 
     public TicTacToe() {
         this.board = new Board();
@@ -56,5 +59,10 @@ public class TicTacToe {
 
     public char getNextPlayer() {
         return board.getNextPlayer();
+    }
+
+    public void printBoard() {
+        String boardInfo = board.assembleBoard();
+        logger.info(boardInfo);
     }
 }

@@ -35,6 +35,7 @@ public class GameStarter {
             try {
                 Integer inputPos = readAndValidateUserInput(scanner);
                 output = ticTacToe.playGame(new Position(inputPos));
+                ticTacToe.printBoard();
             } catch (InvalidInputException | PositionInvalidException | PositionNotEmptyException e) {
                 logger.warning(e.getMessage());
             }
