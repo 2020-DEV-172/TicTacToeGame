@@ -147,4 +147,21 @@ public class BoardTest {
 
         assertThat(board.checkIfAnyColumnIsMarkedBySamePlayer(), is(true));
     }
+
+    @Test
+    public void boardShouldReturnTrueIfLeftToRightDiagonalIsMarkedBySamePlayer() {
+        Position position1 = new Position(INDEX_1);
+        Position position2 = new Position(INDEX_2);
+        Position position9 = new Position(INDEX_9);
+        Position position5 = new Position(INDEX_5);
+        Position position7 = new Position(INDEX_7);
+
+        board.markPlayerAt(position1);
+        board.markPlayerAt(position2);
+        board.markPlayerAt(position5);
+        board.markPlayerAt(position7);
+        board.markPlayerAt(position9);
+
+        assertThat(board.checkIfLeftToRightDiagonalIsMarkedBySamePlayer(), is(true));
+    }
 }
