@@ -1,5 +1,7 @@
 package com.bnpp.kata;
 
+import com.bnpp.kata.model.Player;
+
 import static com.bnpp.kata.constant.Constant.*;
 
 public class TicTacToe {
@@ -21,10 +23,10 @@ public class TicTacToe {
     }
 
     public char getCurrentPlayer() {
-        return gameCounter % INDEX_2 == INDEX_0 ? 'O' : 'X';
+        return gameCounter % INDEX_2 == INDEX_0 ? Player.O.getValue() : Player.X.getValue();
     }
 
     public char getNextPlayer() {
-        return getCurrentPlayer() == 'X' ? 'O' : 'X';
+        return getCurrentPlayer() == Player.X.getValue() ? Player.O.getValue() : Player.X.getValue();
     }
 }
