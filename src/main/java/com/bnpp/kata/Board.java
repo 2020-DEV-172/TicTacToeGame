@@ -62,4 +62,8 @@ public class Board {
     public boolean checkIfLeftToRightDiagonalIsMarkedBySamePlayer() {
         return checkIfPositionsHaveSamePlayer(new Position(INDEX_1), new Position(INDEX_5), new Position(INDEX_9));
     }
+
+    public boolean checkIfRightToLeftDiagonalIsMarkedBySamePlayer() {
+        return checkIfPositionsHaveSamePlayer(new Position(INDEX_3), new Position(INDEX_5), new Position(INDEX_7));
+    }
 }
