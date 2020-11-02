@@ -38,9 +38,7 @@ public class Board {
 
     public boolean checkIfAnyRowIsMarkedBySamePlayer() {
         for (int row = INDEX_1; row < INDEX_10; row += INDEX_3) {
-            if (getPlayerAt(new Position(row)) != Player.EMPTY.getValue() &&
-                    getPlayerAt(new Position(row)) == getPlayerAt(new Position(row + INDEX_1)) &&
-                    getPlayerAt(new Position(row + INDEX_1)) == getPlayerAt(new Position(row + INDEX_2))) {
+            if (checkIfPositionsHaveSamePlayer(new Position(row), new Position(row + INDEX_1), new Position(row + INDEX_2))) {
                 return true;
             }
         }
@@ -49,12 +47,15 @@ public class Board {
 
     public boolean checkIfAnyColumnIsMarkedBySamePlayer() {
         for (int column = INDEX_1; column < INDEX_4; column++) {
-            if (getPlayerAt(new Position(column)) != Player.EMPTY.getValue() &&
-                    getPlayerAt(new Position(column)) == getPlayerAt(new Position(column + INDEX_3)) &&
-                    getPlayerAt(new Position(column + INDEX_3)) == getPlayerAt(new Position(column + INDEX_6))) {
+            if (checkIfPositionsHaveSamePlayer(new Position(column), new Position(column + INDEX_3), new Position(column + INDEX_6))) {
                 return true;
             }
         }
         return false;
+    }
+
+    public boolean checkIfPositionsHaveSamePlayer(Position pos1, Position pos2, Position pos3) {
+        return getPlayerAt(pos1) != Player.EMPTY.getValue() && getPlayerAt(pos1) == getPlayerAt(pos2)
+                && getPlayerAt(pos2) == getPlayerAt(pos3);
     }
 }
