@@ -20,6 +20,13 @@ public class Constant {
     public static final String GAME_CONTINUES = "Game continues.";
     public static final String INVALID_INPUT_MSG = "Entered Position is invalid. Please enter a digit from 1 to 9";
     public static final String GAME_STARTS = "Game Starts";
+    public static final String NEW_LINE = "\n";
+    public static final String STRING_NINE = "9";
+    public static final String STRING_FOUR = "4";
+    public static final String STRING_SIX = "6";
+    public static final String STRING_SEVEN = "7";
+    public static final String STRING_THREE = "3";
+    public static final String X_HAS_WON_THE_GAME = "X has won the game.";
 
     private Constant() {
     }

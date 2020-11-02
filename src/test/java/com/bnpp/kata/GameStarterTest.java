@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 
+import static com.bnpp.kata.constant.Constant.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -21,13 +22,13 @@ public class GameStarterTest {
     @Test
     public void gameShouldProduceResultForGivenInputs() {
         GameStarter gameStarter = new GameStarter();
-        StringBuilder inputStreamBuilder = new StringBuilder("9").append("\n").append("4")
-                .append("\n").append("6").append("\n").append("7").append("\n")
-                .append("3");
+        StringBuilder inputStreamBuilder = new StringBuilder(STRING_NINE).append(NEW_LINE).append(STRING_FOUR)
+                .append(NEW_LINE).append(STRING_SIX).append(NEW_LINE).append(STRING_SEVEN).append(NEW_LINE)
+                .append(STRING_THREE);
         System.setIn(new ByteArrayInputStream(inputStreamBuilder.toString().getBytes()));
 
         String gameResult = gameStarter.startGame();
 
-        assertThat(gameResult, is("X has won the game."));
+        assertThat(gameResult, is(X_HAS_WON_THE_GAME));
     }
 }
