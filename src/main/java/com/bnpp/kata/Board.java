@@ -63,4 +63,8 @@ public class Board {
         return checkIfPositionsHaveSamePlayer(new Position(INDEX_1), new Position(INDEX_5), new Position(INDEX_9)) ||
                 checkIfPositionsHaveSamePlayer(new Position(INDEX_3), new Position(INDEX_5), new Position(INDEX_7));
     }
+
+    public boolean checkIfAllPositionsAreOccupied() {
+        return gameCounter == 9;
+    }
 }

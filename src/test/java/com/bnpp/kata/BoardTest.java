@@ -181,4 +181,29 @@ public class BoardTest {
 
         assertThat(board.checkIfAnyDiagonalIsMarkedBySamePlayer(), is(true));
     }
+
+    @Test
+    public void returnTrueIfAllPositionsArOccupied() {
+        Position position1 = new Position(INDEX_1);
+        Position position2 = new Position(INDEX_2);
+        Position position5 = new Position(INDEX_5);
+        Position position6 = new Position(INDEX_6);
+        Position position3 = new Position(INDEX_3);
+        Position position7 = new Position(INDEX_7);
+        Position position8 = new Position(INDEX_8);
+        Position position9 = new Position(INDEX_9);
+        Position position4 = new Position(INDEX_4);
+
+        board.markPlayerAt(position1);
+        board.markPlayerAt(position2);
+        board.markPlayerAt(position5);
+        board.markPlayerAt(position6);
+        board.markPlayerAt(position3);
+        board.markPlayerAt(position7);
+        board.markPlayerAt(position8);
+        board.markPlayerAt(position9);
+        board.markPlayerAt(position4);
+
+        assertThat(board.checkIfAllPositionsAreOccupied(), is(true));
+    }
 }
