@@ -15,8 +15,9 @@ public class Constant {
     public static final String POSITION_INVALID_MSG = "Input position is out of range, please select any valid position from 1 to 9.";
     public static final String POSITION_NOT_EMPTY_MSG = "Selected position is already filled, please select any other position.";
     public static final Integer INDEX_10 = 10;
+    public static final String GAME_WON = " has won the game.";
+    public static final String EMPTY = "";
 
     private Constant() {
     }
-    
 }
