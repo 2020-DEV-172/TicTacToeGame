@@ -58,4 +58,10 @@ public class Board {
                 getPlayerAt(new Position(INDEX_2)) == getPlayerAt(new Position(INDEX_5)) &&
                 getPlayerAt(new Position(INDEX_5)) == getPlayerAt(new Position(INDEX_8));
     }
+
+    public boolean checkIfThirdColumnIsMarkedBySamePlayer() {
+        return getPlayerAt(new Position(INDEX_3)) != Player.EMPTY.getValue() &&
+                getPlayerAt(new Position(INDEX_3)) == getPlayerAt(new Position(INDEX_6)) &&
+                getPlayerAt(new Position(INDEX_6)) == getPlayerAt(new Position(INDEX_9));
+    }
 }
