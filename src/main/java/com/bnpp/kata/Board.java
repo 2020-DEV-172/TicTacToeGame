@@ -46,4 +46,10 @@ public class Board {
         }
         return false;
     }
+
+    public boolean checkIfFirstColumnIsMarkedBySamePlayer() {
+        return getPlayerAt(new Position(INDEX_1)) != Player.EMPTY.getValue() &&
+                getPlayerAt(new Position(INDEX_1)) == getPlayerAt(new Position(INDEX_4)) &&
+                getPlayerAt(new Position(INDEX_4)) == getPlayerAt(new Position(INDEX_7));
+    }
 }

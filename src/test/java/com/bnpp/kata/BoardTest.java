@@ -96,4 +96,21 @@ public class BoardTest {
 
         assertThat(board.checkIfAnyRowIsMarkedBySamePlayer(), is(true));
     }
+
+    @Test
+    public void boardShouldReturnTrueIfFirstColumnIsMarkedBySamePlayer() {
+        Position position1 = new Position(INDEX_1);
+        Position position2 = new Position(INDEX_2);
+        Position position4 = new Position(INDEX_4);
+        Position position5 = new Position(INDEX_5);
+        Position position7 = new Position(INDEX_7);
+
+        board.markPlayerAt(position1);
+        board.markPlayerAt(position2);
+        board.markPlayerAt(position4);
+        board.markPlayerAt(position5);
+        board.markPlayerAt(position7);
+
+        assertThat(board.checkIfFirstColumnIsMarkedBySamePlayer(), is(true));
+    }
 }
