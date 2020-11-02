@@ -1,6 +1,7 @@
 package com.bnpp.kata;
 
 import com.bnpp.kata.exception.PositionInvalidException;
+import com.bnpp.kata.exception.PositionNotEmptyException;
 import com.bnpp.kata.model.Player;
 import com.bnpp.kata.model.Position;
 import org.junit.Before;
@@ -20,7 +21,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() throws PositionInvalidException {
+    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() throws PositionInvalidException, PositionNotEmptyException {
         Position position = new Position(INDEX_1);
 
         ticTacToe.playGame(position);
@@ -29,7 +30,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void playerShouldChangeAlternatively() throws PositionInvalidException {
+    public void playerShouldChangeAlternatively() throws PositionInvalidException, PositionNotEmptyException {
         Position position = new Position(INDEX_1);
 
         ticTacToe.playGame(position);
@@ -39,9 +40,17 @@ public class TicTacToeTest {
     }
 
     @Test(expected = PositionInvalidException.class)
-    public void throwExceptionWhenPlayerTriesToMarkInOutOfRangePosition() throws PositionInvalidException {
+    public void throwExceptionWhenPlayerTriesToMarkInOutOfRangePosition() throws PositionInvalidException, PositionNotEmptyException {
         Position position = new Position(INDEX_0);
 
+        ticTacToe.playGame(position);
+    }
+
+    @Test(expected = PositionNotEmptyException.class)
+    public void throwExceptionWhenPlayerTriesToMarkInAlreadyOccupiedPosition() throws PositionInvalidException, PositionNotEmptyException {
+        Position position = new Position(INDEX_1);
+
+        ticTacToe.playGame(position);
         ticTacToe.playGame(position);
     }
 }
