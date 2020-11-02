@@ -71,15 +71,15 @@ public class Board {
     public String assembleBoard() {
         StringBuilder builder = new StringBuilder(NEW_LINE);
         for (char[] rows : boardGrid) {
-            builder.append("|");
+            builder.append(COLUMN_SEPARATOR);
             for (char column : rows) {
                 if (column == Player.EMPTY.getValue()) {
-                    builder.append(" ").append("|");
+                    builder.append(SPACE).append(COLUMN_SEPARATOR);
                 } else {
-                    builder.append(column).append("|");
+                    builder.append(column).append(COLUMN_SEPARATOR);
                 }
             }
-            builder.append(NEW_LINE).append("-------").append(NEW_LINE);
+            builder.append(NEW_LINE).append(ROW_SEPARATOR).append(NEW_LINE);
         }
         return builder.toString();
     }
