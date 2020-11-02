@@ -33,10 +33,7 @@ public class GameStarter {
         String output = GAME_STARTS;
         while (!ticTacToe.checkIfAllPositionsAreOccupied()) {
             try {
-                char player = ticTacToe.getNextPlayer();
-                String reader = String.format("%s %s %s", "Player", player, ",please enter a position[1-9] to mark on the board");
-                logger.info(reader);
-                Integer inputPos = validateInput(scanner.nextLine());
+                Integer inputPos = readAndValidateUserInput(scanner);
                 output = ticTacToe.playGame(new Position(inputPos));
             } catch (InvalidInputException | PositionInvalidException | PositionNotEmptyException e) {
                 logger.warning(e.getMessage());
@@ -46,5 +43,12 @@ public class GameStarter {
             }
         }
         return output;
+    }
+
+    public Integer readAndValidateUserInput(Scanner scanner) throws InvalidInputException {
+        char player = ticTacToe.getNextPlayer();
+        String reader = String.format("%s %s %s", "Player", player, ",please enter a position[1-9] to mark on the board");
+        logger.info(reader);
+        return validateInput(scanner.nextLine());
     }
 }
