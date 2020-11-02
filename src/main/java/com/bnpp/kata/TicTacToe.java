@@ -14,9 +14,14 @@ public class TicTacToe {
         this.board = new Board();
     }
 
-    public void playGame(Position position) throws PositionInvalidException, PositionNotEmptyException {
+    public String playGame(Position position) throws PositionInvalidException, PositionNotEmptyException {
         validatePosition(position);
         board.markPlayerAt(position);
+        String output = "";
+        if (board.checkIfAnyRowIsMarkedBySamePlayer()) {
+            output = getCurrentPlayer() + " has won the game.";
+        }
+        return output;
     }
 
     private void validatePosition(Position position) throws PositionInvalidException, PositionNotEmptyException {
