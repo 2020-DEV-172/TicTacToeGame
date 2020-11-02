@@ -18,7 +18,7 @@ public class TicTacToe {
         if (position.getInputPosition() < INDEX_1 || position.getInputPosition() > INDEX_9) {
             throw new PositionInvalidException(POSITION_INVALID_MSG);
         } else if (board.checkIfPositionIsAlreadyOccupied(position)) {
-            throw new PositionNotEmptyException("Selected position is already filled, please select any other position.");
+            throw new PositionNotEmptyException(POSITION_NOT_EMPTY_MSG);
         }
         board.markPlayerAt(position);
     }

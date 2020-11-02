@@ -13,9 +13,9 @@ public class Constant {
     public static final Integer INDEX_0 = 0;
     public static final Integer INDEX_2 = 2;
     public static final String POSITION_INVALID_MSG = "Input position is out of range, please select any valid position from 1 to 9.";
+    public static final String POSITION_NOT_EMPTY_MSG = "Selected position is already filled, please select any other position.";
 
     private Constant() {
     }
-
-
+    
 }
