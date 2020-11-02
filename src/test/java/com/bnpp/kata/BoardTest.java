@@ -162,7 +162,7 @@ public class BoardTest {
         board.markPlayerAt(position7);
         board.markPlayerAt(position9);
 
-        assertThat(board.checkIfLeftToRightDiagonalIsMarkedBySamePlayer(), is(true));
+        assertThat(board.checkIfAnyDiagonalIsMarkedBySamePlayer(), is(true));
     }
 
     @Test
@@ -179,6 +179,6 @@ public class BoardTest {
         board.markPlayerAt(position9);
         board.markPlayerAt(position7);
 
-        assertThat(board.checkIfRightToLeftDiagonalIsMarkedBySamePlayer(), is(true));
+        assertThat(board.checkIfAnyDiagonalIsMarkedBySamePlayer(), is(true));
     }
 }

@@ -59,11 +59,8 @@ public class Board {
                 && getPlayerAt(pos2) == getPlayerAt(pos3);
     }
 
-    public boolean checkIfLeftToRightDiagonalIsMarkedBySamePlayer() {
-        return checkIfPositionsHaveSamePlayer(new Position(INDEX_1), new Position(INDEX_5), new Position(INDEX_9));
-    }
-
-    public boolean checkIfRightToLeftDiagonalIsMarkedBySamePlayer() {
-        return checkIfPositionsHaveSamePlayer(new Position(INDEX_3), new Position(INDEX_5), new Position(INDEX_7));
+    public boolean checkIfAnyDiagonalIsMarkedBySamePlayer() {
+        return checkIfPositionsHaveSamePlayer(new Position(INDEX_1), new Position(INDEX_5), new Position(INDEX_9)) ||
+                checkIfPositionsHaveSamePlayer(new Position(INDEX_3), new Position(INDEX_5), new Position(INDEX_7));
     }
 }
