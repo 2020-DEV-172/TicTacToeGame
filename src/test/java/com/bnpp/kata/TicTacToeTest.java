@@ -1,5 +1,6 @@
 package com.bnpp.kata;
 
+import com.bnpp.kata.exception.PositionInvalidException;
 import com.bnpp.kata.model.Player;
 import com.bnpp.kata.model.Position;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class TicTacToeTest {
 
     @Test
-    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() throws Exception {
+    public void playerShouldBeAbleToMarkXInAnyPositionAndRetrieveTheSame() throws PositionInvalidException {
         TicTacToe ticTacToe = new TicTacToe();
         Position position = new Position(1);
 
@@ -21,7 +22,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void playerShouldChangeAlternatively() throws Exception {
+    public void playerShouldChangeAlternatively() throws PositionInvalidException {
         TicTacToe ticTacToe = new TicTacToe();
         Position position = new Position(1);
 
@@ -31,8 +32,8 @@ public class TicTacToeTest {
         assertThat(ticTacToe.getNextPlayer(), is(Player.O.getValue()));
     }
 
-    @Test(expected = Exception.class)
-    public void throwExceptionWhenPlayerTriesToMarkInOutOfRangePosition() throws Exception {
+    @Test(expected = PositionInvalidException.class)
+    public void throwExceptionWhenPlayerTriesToMarkInOutOfRangePosition() throws PositionInvalidException {
         TicTacToe ticTacToe = new TicTacToe();
         Position position = new Position(INDEX_0);
 

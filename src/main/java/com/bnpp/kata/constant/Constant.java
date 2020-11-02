@@ -12,6 +12,7 @@ public class Constant {
     public static final Integer INDEX_3 = 3;
     public static final Integer INDEX_0 = 0;
     public static final Integer INDEX_2 = 2;
+    public static final String POSITION_INVALID_MSG = "Input position is out of range, please select any valid position from 1 to 9.";
 
     private Constant() {
     }
