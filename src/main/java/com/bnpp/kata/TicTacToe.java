@@ -20,10 +20,14 @@ public class TicTacToe {
         String output = EMPTY;
         if (checkWinner()) {
             output = getCurrentPlayer() + GAME_WON;
-        } else if (board.checkIfAllPositionsAreOccupied()) {
-            output = "Game is draw, as all the positions have been filled without a winner.";
+        } else if (checkIfAllPositionsAreOccupied()) {
+            output = GAME_DRAW;
         }
         return output;
+    }
+
+    private boolean checkIfAllPositionsAreOccupied() {
+        return board.checkIfAllPositionsAreOccupied();
     }
 
     private boolean checkWinner() {

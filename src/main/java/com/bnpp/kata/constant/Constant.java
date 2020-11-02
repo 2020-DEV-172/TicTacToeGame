@@ -17,6 +17,7 @@ public class Constant {
     public static final Integer INDEX_10 = 10;
     public static final String GAME_WON = " has won the game.";
     public static final String EMPTY = "";
+    public static final String GAME_DRAW = "Game is draw, as all the positions have been filled without a winner.";
 
     private Constant() {
     }
