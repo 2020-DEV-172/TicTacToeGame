@@ -2,7 +2,7 @@ package com.bnpp.kata.model;
 
 public enum Player {
 
-    X('X'), O('O');
+    X('X'), O('O'), EMPTY('\0');
 
     private char value;
 

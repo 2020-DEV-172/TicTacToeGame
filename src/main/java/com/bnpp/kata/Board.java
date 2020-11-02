@@ -33,6 +33,6 @@ public class Board {
     }
 
     public boolean checkIfPositionIsAlreadyOccupied(Position position) {
-        return getPlayerAt(position) != '\0';
+        return getPlayerAt(position) != Player.EMPTY.getValue();
     }
 }
