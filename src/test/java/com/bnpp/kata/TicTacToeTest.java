@@ -67,7 +67,7 @@ public class TicTacToeTest {
         ticTacToe.playGame(position9);
         ticTacToe.playGame(position5);
 
-        assertThat(ticTacToe.playGame(position8), is(ticTacToe.getCurrentPlayer() + " has won the game."));
+        assertThat(ticTacToe.playGame(position8), is(X_HAS_WON_THE_GAME));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class TicTacToeTest {
         ticTacToe.playGame(position5);
         ticTacToe.playGame(position7);
 
-        assertThat(ticTacToe.playGame(position8), is(ticTacToe.getCurrentPlayer() + " has won the game."));
+        assertThat(ticTacToe.playGame(position8), is(X_HAS_WON_THE_GAME));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class TicTacToeTest {
         ticTacToe.playGame(position5);
         ticTacToe.playGame(position2);
 
-        assertThat(ticTacToe.playGame(position7), is(ticTacToe.getCurrentPlayer() + " has won the game."));
+        assertThat(ticTacToe.playGame(position7), is(X_HAS_WON_THE_GAME));
     }
 
     @Test

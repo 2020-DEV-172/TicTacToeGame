@@ -22,7 +22,7 @@ public class TicTacToe {
         board.markPlayerAt(position);
         String output;
         if (checkWinner()) {
-            output = getCurrentPlayer() + GAME_WON;
+            output = String.format("%s %s%s", "Player", getCurrentPlayer(), GAME_WON);
         } else if (checkIfAllPositionsAreOccupied()) {
             output = GAME_DRAW;
         } else {

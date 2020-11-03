@@ -26,7 +26,7 @@ public class Constant {
     public static final String STRING_SIX = "6";
     public static final String STRING_SEVEN = "7";
     public static final String STRING_THREE = "3";
-    public static final String X_HAS_WON_THE_GAME = "X has won the game.";
+    public static final String X_HAS_WON_THE_GAME = "Player X has won the game.";
     public static final String COLUMN_SEPARATOR = "|";
     public static final String SPACE = " ";
     public static final String ROW_SEPARATOR = "-------";
