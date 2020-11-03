@@ -123,7 +123,7 @@ public class TicTacToeTest {
         ticTacToe.playGame(position8);
         ticTacToe.playGame(position2);
 
-        assertThat(ticTacToe.playGame(position7), is("Game is draw, as all the positions have been filled without a winner."));
+        assertThat(ticTacToe.playGame(position7), is(GAME_DRAW));
     }
 
     @Test
@@ -145,6 +145,6 @@ public class TicTacToeTest {
         ticTacToe.playGame(position9);
         ticTacToe.playGame(position8);
 
-        assertThat(ticTacToe.playGame(position2), is("Game continues."));
+        assertThat(ticTacToe.playGame(position2), is(GAME_CONTINUES));
     }
 }
