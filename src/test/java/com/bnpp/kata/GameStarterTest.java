@@ -31,4 +31,17 @@ public class GameStarterTest {
 
         assertThat(gameResult, is(X_HAS_WON_THE_GAME));
     }
+
+    @Test
+    public void gameShouldProduceResultForGivenInputsWithWarningMessage() {
+        GameStarter gameStarter = new GameStarter();
+        StringBuilder inputStreamBuilder = new StringBuilder(STRING_NINE).append(NEW_LINE).append(STRING_FOUR)
+                .append(NEW_LINE).append(STRING_SIX).append(NEW_LINE).append(STRING_SEVEN).append(NEW_LINE)
+                .append(COLUMN_SEPARATOR).append(NEW_LINE).append(STRING_THREE);
+        System.setIn(new ByteArrayInputStream(inputStreamBuilder.toString().getBytes()));
+
+        String gameResult = gameStarter.startGame();
+
+        assertThat(gameResult, is(X_HAS_WON_THE_GAME));
+    }
 }
