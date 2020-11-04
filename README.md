@@ -2,7 +2,7 @@
 ![Image of TicTacToe](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/200px-Tic_tac_toe.svg.png)
 
 Tic-tac-toe, Xs and Os or CROSS and NOUGHTS is a game for two players, X and O, who take turns marking the spaces in a 3X3 matrix as depicted below. 
-The player who places three of their marks in a horizontal, vertical, or diagonal row [either from top right to bottom left or top left to bottom right ]is the winner. 
+The player who places three of their marks in a horizontal, vertical, or diagonal row [either from top right to bottom left or top left to bottom right ] is the winner. 
 Game result will be declared as 'Draw' when all of the positions in game board are marked.
 ```
 1 2 3
@@ -65,10 +65,28 @@ X | O | X     7 | 8 | 9
 3) IDE will import your maven project 
 ```
 
+# Run application in Intellij IDE
+```
+1. Navigate and open the class src/main/java/com/bnpp/kata/GameStarter.java
+2. Go to Run -> Run -> GameStarter or right click on the GameStarter.java and select "Run GameStarter.main()"
+```
+
+# Run application in command prompt
+```
+1. Open the command prompt / terminal from project directory
+2. Execute the command "mvn clean install". 
+3. After successful maven build, goto <ProjectDirectory>\target\classes
+4. Execute the command "java -classpath .\ com.bnpp.kata.GameStarter" 
+5. Please enter a digit from 1 to 9 for position value as depicted below
+	7 [in words : Seven]
+
+Please provide the position value until the game ends!!
+```
+
 # Run Test cases
 ```
-1) Navigate to GameSuite class in IDE. 
-2) Run the GameSuite class.
+1) Navigate to src/test/java/com/bnpp/kata/GameSuite.java in IDE. 
+2) Go to Run -> Run -> GameSuite or right click on the GameSuite.java and select "Run GameSuite"
 ```
 # Jacoco code coverage Report using JaCoCo Maven plugin
 ```
@@ -77,7 +95,7 @@ X | O | X     7 | 8 | 9
 3. Open the target/site/jacoco/index.html file, review the code coverage report
 ```
 
-# Mutation code coverage Report using PITest Maven plugin**
+# Mutation code coverage Report using PIT Test Maven plugin
 ```
 1. Open the command prompt / terminal from project directory
 2. Run 'mvn clean test', the Mutation code coverage report will be generated at target/pit-reports/YYYYMMDDHHMI/*
